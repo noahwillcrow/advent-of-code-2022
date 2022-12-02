@@ -3,8 +3,8 @@ module Main where
 import Prelude
 
 import Effect (Effect)
-import Effect.Console (log)
+import DayOne (runDayOne)
 
 main :: Effect Unit
 main = do
-  log "🍝"
+  runDayOne
