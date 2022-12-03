@@ -12,16 +12,13 @@ to generate this file without the comments in this block.
 -}
 { name = "my-project"
 , dependencies =
-  [ "aff"
-  , "arrays"
+  [ "arrays"
   , "console"
   , "effect"
   , "integers"
   , "maybe"
   , "node-buffer"
   , "node-fs"
-  , "node-fs-aff"
-  , "node-readline"
   , "prelude"
   , "stringutils"
   ]
