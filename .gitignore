@@ -107,3 +107,6 @@ dist
 .spago/
 output/
 *.psc-ide-port
+
+# VS Code
+.vscode/
