@@ -21,7 +21,7 @@ handleInputLines array maxCount = case (countCaloriesForNextElf array 0) of
 
 runDayOnePartOne :: Effect Unit
 runDayOnePartOne = do
-  inputFileContents <- readTextFile UTF8 "./inputs/day-one-input.txt"
+  inputFileContents <- readTextFile UTF8 "./inputs/day-01-input.txt"
   log (toStringAs decimal (handleInputLines (lines inputFileContents) 0))
 
 
