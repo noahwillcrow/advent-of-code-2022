@@ -21,6 +21,7 @@ to generate this file without the comments in this block.
   , "node-fs"
   , "prelude"
   , "stringutils"
+  , "tuples"
   ]
 , packages = ./packages.dhall
 , sources = [ "src/**/*.purs", "test/**/*.purs" ]
