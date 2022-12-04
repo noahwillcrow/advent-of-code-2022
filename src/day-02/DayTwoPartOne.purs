@@ -1,4 +1,4 @@
-module DayTwoPartTwo
+module DayTwoPartOne
   ( runDayTwoPartOne
   )
   where
