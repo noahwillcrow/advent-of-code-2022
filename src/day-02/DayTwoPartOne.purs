@@ -1,5 +1,5 @@
 module DayTwoPartTwo
-  ( runDayTwoPartTwo
+  ( runDayTwoPartOne
   )
   where
 
@@ -31,8 +31,8 @@ handleInputLines inputArray currentScore = case (head inputArray) of
   Nothing -> currentScore
   Just inputLine -> handleInputLines (fromMaybe [] (tail inputArray)) (currentScore + (determineScoreForRound inputLine))
 
-runDayTwoPartTwo :: Effect Unit
-runDayTwoPartTwo = do
+runDayTwoPartOne :: Effect Unit
+runDayTwoPartOne = do
   inputFileContents <- readTextFile UTF8 "./inputs/day-02-input.txt"
   log (toStringAs decimal (handleInputLines (lines inputFileContents) 0))
 
