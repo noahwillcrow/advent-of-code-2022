@@ -110,6 +110,3 @@ output/
 
 # VS Code
 .vscode/
-
-# Input files
-inputs/*input.txt
