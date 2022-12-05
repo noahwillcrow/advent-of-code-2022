@@ -3,5 +3,7 @@ module DebugUtils
   )
   where
 
+import Debug (trace)
+
 traceReturnValue :: forall a. a -> a
-traceReturnValue value = value -- trace value \_ -> value
+traceReturnValue value = trace value \_ -> value
