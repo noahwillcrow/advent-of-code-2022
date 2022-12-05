@@ -13,7 +13,6 @@ import Data.String as Str
 import Data.String.CodeUnits (toCharArray)
 import Data.String.Utils (lines)
 import DayThreeCommon (scoreItem)
-import DebugUtils (traceReturnValue)
 import Effect (Effect)
 import Effect.Console (log)
 import Node.Encoding (Encoding(..))
@@ -29,11 +28,11 @@ identifySharedItemInLine inputArray originalInputLength charsInFirstHalf =
     if
       member (fromMaybe '0' (head inputArray)) charsInFirstHalf
     then
-      traceReturnValue (fromMaybe '0' (head inputArray))
+      fromMaybe '0' (head inputArray)
     else
       identifySharedItemInLine (fromMaybe [] (tail inputArray)) originalInputLength charsInFirstHalf
 evaluateLine :: String -> Int
-evaluateLine line = traceReturnValue (scoreItem (identifySharedItemInLine (toCharArray (traceReturnValue line)) (Str.length line) empty))
+evaluateLine line = scoreItem (identifySharedItemInLine (toCharArray line) (Str.length line) empty)
 
 handleInputLines :: Array String -> Int -> Int
 handleInputLines inputArray result = case (head inputArray) of
