@@ -1,5 +1,5 @@
-module DayFivePartOne
-  ( runDayFivePartOne
+module DayFivePartTwo
+  ( runDayFivePartTwo
   )
   where
 
@@ -14,9 +14,9 @@ import Node.Encoding (Encoding(..))
 import Node.FS.Sync (readTextFile)
 
 handleInputLines :: Array String -> String
-handleInputLines inputArray = fromCharArray (getOutputFromFinalState (doMoveOperations true (parseInitialState inputArray)))
+handleInputLines inputArray = fromCharArray (getOutputFromFinalState (doMoveOperations false (parseInitialState inputArray)))
 
-runDayFivePartOne :: Effect Unit
-runDayFivePartOne = do
+runDayFivePartTwo :: Effect Unit
+runDayFivePartTwo = do
   inputFileContents <- readTextFile UTF8 "./inputs/day-05-input.txt"
   log (handleInputLines (lines inputFileContents))
