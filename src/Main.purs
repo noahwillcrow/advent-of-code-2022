@@ -3,8 +3,8 @@ module Main where
 import Prelude
 
 import Effect (Effect)
-import DaySixPartTwo (runDaySixPartTwo)
+import DaySevenPartTwo (runDaySevenPartTwo)
 
 main :: Effect Unit
 main = do
-  runDaySixPartTwo
+  runDaySevenPartTwo

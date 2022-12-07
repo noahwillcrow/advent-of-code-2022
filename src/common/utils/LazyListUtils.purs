@@ -1,5 +1,6 @@
 module LazyListUtils
   ( consWithMaxLength
+  , initOrNil
   , isEveryElementUnique
   , listContainsElement
   , tailOrNil
@@ -8,7 +9,7 @@ module LazyListUtils
 
 import Prelude
 
-import Data.List.Lazy (List, cons, find, head, length, nil, tail, take)
+import Data.List.Lazy (List, cons, find, head, init, length, nil, tail, take)
 import Data.Maybe (Maybe(..), fromMaybe, isJust)
 import Data.Set (Set, fromFoldable, insert, member)
 
@@ -20,6 +21,9 @@ consWithMaxLength value list maxLength =
     cons value (take (maxLength - 1) list)
   else
     cons value list
+
+initOrNil :: forall a. List a -> List a
+initOrNil l = fromMaybe nil (init l)
 
 _isEveryElementUnique :: forall a. Ord a => List a -> Set a -> Boolean
 _isEveryElementUnique inputList seenElements = case (head inputList) of
