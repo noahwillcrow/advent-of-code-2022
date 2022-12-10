@@ -3,12 +3,13 @@ module ArrayUtils
   , map
   , tailOrEmpty
   , unsafeIndex
+  , unsafeModifyAt
   )
   where
 
 import Prelude
 
-import Data.Array (cons, head, length, tail, (!!))
+import Data.Array (cons, head, length, modifyAt, tail, (!!))
 import Data.Maybe (Maybe(..), fromJust, fromMaybe)
 import Partial.Unsafe (unsafePartial)
 
@@ -38,3 +39,6 @@ tailOrEmpty a = fromMaybe [] (tail a)
 
 unsafeIndex :: forall a. Array a -> Int -> a
 unsafeIndex a i = unsafePartial (fromJust (a !! i))
+
+unsafeModifyAt :: forall a. Array a -> Int -> a -> Array a
+unsafeModifyAt a i v = unsafePartial (fromJust (modifyAt i (\_ -> v) a))
